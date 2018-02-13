@@ -18,7 +18,7 @@ public class BookRecommend{
         book.setName("aaa");
         book.setAuthor("xiadong");
         book.setPrice(69.5f);
-        book.setPublisher("XX出版社");
+        book.setPublisher("XXDD出版社");
         book.setStar(8.7f);
 
         DoubanBook book2 = new DoubanBook();
