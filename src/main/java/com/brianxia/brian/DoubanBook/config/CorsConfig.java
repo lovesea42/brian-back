@@ -12,7 +12,7 @@ public class CorsConfig extends WebMvcConfigurerAdapter {
     public void addCorsMappings(CorsRegistry registry) {
 
         registry.addMapping("/api/**").allowedOrigins("http://47.94.129.154");
-
+        registry.addMapping("/api/**").allowedOrigins("http://localhost:1024");
     }
 
 }
