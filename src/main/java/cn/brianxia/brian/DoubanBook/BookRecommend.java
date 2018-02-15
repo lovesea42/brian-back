@@ -1,9 +1,10 @@
-package com.brianxia.brian.DoubanBook;
+package cn.brianxia.brian.DoubanBook;
 
-import com.brianxia.brian.DoubanBook.entity.DoubanBook;
+import cn.brianxia.brian.DoubanBook.entity.DoubanBook;
+import io.swagger.annotations.ApiOperation;
 import org.apache.logging.log4j.LogManager;
-import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
@@ -17,7 +18,8 @@ public class BookRecommend{
 
     private static final Logger logger = LogManager.getLogger(BookRecommend.class);
 
-    @RequestMapping(value = "/test")
+    @ApiOperation(value="测试用接口", notes="测试用接口信息")
+    @RequestMapping(value = "/test",method = RequestMethod.GET)
     public List<DoubanBook> getBookRecommend(){
         DoubanBook book = new DoubanBook();
         book.setName("aaa");

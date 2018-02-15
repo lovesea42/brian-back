@@ -1,4 +1,4 @@
-package com.brianxia.brian;
+package cn.brianxia.brian;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

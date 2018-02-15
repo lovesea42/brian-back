@@ -1,4 +1,4 @@
-package com.brianxia.brian.DoubanBook.entity;
+package cn.brianxia.brian.DoubanBook.entity;
 
 import lombok.Data;
 
