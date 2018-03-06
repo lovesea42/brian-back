@@ -1,6 +1,6 @@
-package cn.brianxia.brian.DoubanBook;
+package cn.brianxia.brian.douban.service;
 
-import cn.brianxia.brian.DoubanBook.entity.DoubanBook;
+import cn.brianxia.brian.douban.entity.DoubanBook;
 import io.swagger.annotations.ApiOperation;
 import org.apache.logging.log4j.LogManager;
 import org.springframework.web.bind.annotation.RequestMapping;
