@@ -8,6 +8,6 @@ public class DoubanBook {
     private String name;
     private String author;
     private String publisher;
-    private Float star;
-    private Float price;
+    private Double star;
+    private Double price;
 }
