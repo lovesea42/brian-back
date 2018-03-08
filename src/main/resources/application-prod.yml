@@ -2,3 +2,10 @@ server:
       port: 8001
 api:
     url: "http://47.94.129.154"
+
+spring:
+      data:
+        mongodb:
+          uri: mongodb://localhost:27017/book
+      application:
+          name: mongoweb
