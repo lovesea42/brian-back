@@ -47,4 +47,12 @@ public class BookRecommend{
 
         return books;
     }
+
+    @ApiOperation(value="查询分页页数", notes="查询分页页数")
+    @RequestMapping(value = "/doubanbookpage",method = RequestMethod.GET)
+    public Long getBookRecommendPage( @RequestParam(value = "size") int size){
+
+        return doubanBookDao.findPageNum(size);
+
+    }
 }

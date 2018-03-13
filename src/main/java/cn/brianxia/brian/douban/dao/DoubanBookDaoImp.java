@@ -27,4 +27,12 @@ public class DoubanBookDaoImp implements DoubanBookDao {
         Pageable pageable=PageRequest.of(page,size);
         return mongoTemplate.find(new Query().with(pageable),DoubanBook.class);
     }
+
+    @Override
+    public Long findPageNum(int size) {
+        if(size <= 0)
+            return 0L;
+        long totalCount = this.mongoTemplate.count(new Query(), DoubanBook.class);
+        return totalCount % size == 0 ? totalCount/size: totalCount/size+1;
+    }
 }
