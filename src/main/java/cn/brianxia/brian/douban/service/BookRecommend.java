@@ -55,4 +55,12 @@ public class BookRecommend{
         return doubanBookDao.findPageNum(size);
 
     }
+
+    @ApiOperation(value="查询数据总数", notes="查询数据总数")
+    @RequestMapping(value = "/doubanbooknum",method = RequestMethod.GET)
+    public Long getBookRecommendNum( ){
+
+        return doubanBookDao.findTotalNum();
+
+    }
 }

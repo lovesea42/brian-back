@@ -35,4 +35,10 @@ public class DoubanBookDaoImp implements DoubanBookDao {
         long totalCount = this.mongoTemplate.count(new Query(), DoubanBook.class);
         return totalCount % size == 0 ? totalCount/size: totalCount/size+1;
     }
+
+    @Override
+    public Long findTotalNum() {
+        long totalCount = this.mongoTemplate.count(new Query(), DoubanBook.class);
+        return totalCount;
+    }
 }

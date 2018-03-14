@@ -8,4 +8,5 @@ public interface DoubanBookDao {
     List<DoubanBook> findAll();
     List<DoubanBook> findByPage(int page,int size);
     Long findPageNum(int size);
+    Long findTotalNum();
 }
