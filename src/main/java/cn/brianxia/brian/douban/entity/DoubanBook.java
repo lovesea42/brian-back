@@ -25,4 +25,5 @@ public class DoubanBook implements Serializable {
     private Double price;
     private String tags;
     private Long   comment;
+    private String   img;
 }
