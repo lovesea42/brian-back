@@ -4,6 +4,7 @@ import cn.brianxia.brian.douban.entity.DoubanBook;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
@@ -32,6 +33,7 @@ public class DoubanBookDaoImp implements DoubanBookDao {
             criteria.orOperator(Criteria.where("name").is(pattern),Criteria.where("author").is(pattern)
                     ,Criteria.where("tags").is(pattern));
             q.addCriteria(criteria);
+            q.with(new Sort(new Sort.Order(Sort.Direction.DESC, "rate")));
         }
         return q;
     }
