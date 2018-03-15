@@ -41,26 +41,28 @@ public class BookRecommend{
     @ApiOperation(value="查询分页接口", notes="查询分页接口")
     @RequestMapping(value = "/doubanbook",method = RequestMethod.GET)
     public List<DoubanBook> getBookRecommendbyPage( @RequestParam(value = "page") int page,
-                                                    @RequestParam(value = "size") int size){
+                                                    @RequestParam(value = "size") int size,
+                                                    @RequestParam(value = "keyword" , required = false) String keyword){
 
-        List<DoubanBook> books = doubanBookDao.findByPage(page,size);
+        List<DoubanBook> books = doubanBookDao.findByPage(page,size,keyword);
 
         return books;
     }
 
     @ApiOperation(value="查询分页页数", notes="查询分页页数")
     @RequestMapping(value = "/doubanbookpage",method = RequestMethod.GET)
-    public Long getBookRecommendPage( @RequestParam(value = "size") int size){
+    public Long getBookRecommendPage( @RequestParam(value = "size") int size,
+                                      @RequestParam(value = "keyword", required = false) String keyword){
 
-        return doubanBookDao.findPageNum(size);
+        return doubanBookDao.findPageNum(size,keyword);
 
     }
 
     @ApiOperation(value="查询数据总数", notes="查询数据总数")
     @RequestMapping(value = "/doubanbooknum",method = RequestMethod.GET)
-    public Long getBookRecommendNum( ){
+    public Long getBookRecommendNum(@RequestParam(value = "keyword", required = false) String keyword ){
 
-        return doubanBookDao.findTotalNum();
+        return doubanBookDao.findTotalNum(keyword);
 
     }
 }
