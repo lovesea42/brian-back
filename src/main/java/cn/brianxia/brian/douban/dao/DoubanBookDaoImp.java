@@ -33,7 +33,7 @@ public class DoubanBookDaoImp implements DoubanBookDao {
             criteria.orOperator(Criteria.where("name").is(pattern),Criteria.where("author").is(pattern)
                     ,Criteria.where("tags").is(pattern));
             q.addCriteria(criteria);
-            q.with(new Sort(new Sort.Order(Sort.Direction.DESC, "rate")));
+            q.with(new Sort(new Sort.Order(Sort.Direction.DESC, "star")));
         }
         return q;
     }
